@@ -116,7 +116,7 @@
                     const onemapRes = 
                         await fetch(
                             "https://developers.onemap.sg/commonapi/search?searchVal=" + 
-                            postalCode + 
+                            postalcode + 
                             "&getAddrDetails=N&returnGeom=Y&pageNum=1");
                     const onemapJson = await onemapRes.json();
                     const lat = parseFloat(onemapJson['results'][0]['LATITUDE']);
@@ -137,22 +137,30 @@
                 const allData = allDataJson['formResponses1'];
                 let coords = [];
                 for (let request of allData) {
-                    const postalCode = request.postalcode;
+                    const postalcode = request.postalcode;
                     try {
                         [lat, lng] = await getCoords(postalcode);
                         coords.push({...request, lat, lng});
                     } catch(e) {
+<<<<<<< Updated upstream
                         console.log("invalid postal code: " + postalcode);
+=======
+                        console.log(e + "invalid postal code: " + postalcode);
+>>>>>>> Stashed changes
                     }
                 }
                 $('#searchpostalcodeform').submit(async function(e) {
                     e.preventDefault();
-                    const postalCode = $('#searchpostalcode').val();
+                    const postalcode = $('#searchpostalcode').val();
                     $('#requestlist').hide();
                     //$('#searchpostalcodeform').hide();
                     $('#requestsearch').show();  
                     try {
+<<<<<<< Updated upstream
                         [lat, lng] = await getCoords(postalCode);                
+=======
+                        [lat, lng] = await getCoords(postalcode);
+>>>>>>> Stashed changes
                         coords.map(obj => {
                             // Squared distance from searched postal code to request (x^2 + y^2) 
                             // unclear what the unit of distance is between two lat longs
