@@ -156,11 +156,7 @@
                     //$('#searchpostalcodeform').hide();
                     $('#requestsearch').show();  
                     try {
-<<<<<<< Updated upstream
-                        [lat, lng] = await getCoords(postalCode);                
-=======
-                        [lat, lng] = await getCoords(postalcode);
->>>>>>> Stashed changes
+                        [lat, lng] = await getCoords(postalcode);                
                         coords.map(obj => {
                             // Squared distance from searched postal code to request (x^2 + y^2) 
                             // unclear what the unit of distance is between two lat longs
