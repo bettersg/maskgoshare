@@ -102,7 +102,7 @@
                     <td><small>{{ timestamp}}</small></td> 
                     <td><a target="_top" href="mailto:{{email}}?subject=MaskGoShare">{{item}}</a></td> 
                     <td>{{comments}}</td> 
-                    <td>S({{postalcode}})</td> 
+                    <td><a target="_blank" href="https://www.google.com.sg/maps/place/Singapore+{{postalcode}}">S({{postalcode}})</a></td> 
                 </tr>                   
               
                 {{/each}}
@@ -142,11 +142,7 @@
                         [lat, lng] = await getCoords(postalcode);
                         coords.push({...request, lat, lng});
                     } catch(e) {
-<<<<<<< Updated upstream
-                        console.log("invalid postal code: " + postalcode);
-=======
                         console.log(e + "invalid postal code: " + postalcode);
->>>>>>> Stashed changes
                     }
                 }
                 $('#searchpostalcodeform').submit(async function(e) {
@@ -197,7 +193,7 @@
                                 <td><small>{{timestamp}}</small></td> 
                                 <td><a target="_top" href="mailto:{{email}}?subject=MaskGoShare">{{item}}</a></td> 
                                 <td>{{comments}}</td> 
-                                <td>S({{postalcode}}) </td> 
+                                <td><a  target="_blank" href="https://www.google.com.sg/maps/place/Singapore+{{postalcode}}">S({{postalcode}})</a></td> 
                             </tr>                   
                           
                             {{/each}}
@@ -303,7 +299,7 @@
         </div>
         <footer class="text-center border-danger border border-top-0">
             <hr class="border-danger"/>
-            <p class="text-center">This is a #techforgood product by <a href="https://better.sg" target="_blank">better.sg</a>. We solve social problems with technology. Find out more and join us!</p>
+            <p class="text-center">This is a #techforgood product by <a href="https://better.sg" target="_blank">better.sg</a>. We solve social problems with technology. Find out more and join us! If you have any feedback for us, please email us at <a href="mailto:info@better.sg">info@better.sg</a></p>
             <img src="images/bettersgmasterlogo.png" class="text-center"/>
         </footer>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>         
